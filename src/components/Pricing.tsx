@@ -1,8 +1,39 @@
 import React from "react";
+import { Check } from "lucide-react";
+import Reveal from "@/components/motion/Reveal";
+import { Stagger, StaggerItem } from "@/components/motion/Stagger";
+
+const CheckIcon = () => (
+  <Check className="w-5 h-5 text-primary-container shrink-0" strokeWidth={2.5} aria-hidden="true" />
+);
+
+const essentialFeatures = [
+  "Wash, dry and fold",
+  "Standard LOD detergent included",
+  "Free pickup and delivery",
+  "Full photo documentation",
+  "Next day, within 24 hours",
+];
+
+const expressFeatures = [
+  "Same day delivery",
+  "Same day collection",
+  "Priority processing",
+  "Priority delivery",
+  "Everything in Essential",
+];
+
+const rushFeatures = [
+  "6-hour turnaround from pickup",
+  "Emergency priority placement",
+  "Top of the queue always",
+  "Everything in Express",
+];
 
 export default function Pricing() {
   return (
-    <section
+    <Reveal
+      as="section"
       id="pricing"
       className="py-24 md:py-32 bg-[#F4F6F8] text-surface-container-lowest"
     >
@@ -10,250 +41,134 @@ export default function Pricing() {
         {/* Header */}
         <div className="text-center mb-20 max-w-2xl mx-auto">
           <h2 className="font-heading font-bold text-3xl sm:text-4xl md:text-5xl leading-tight text-[#0e1513] mb-6">
-            Simple, transparent pricing.
+            Simple. Flat. No surprises.
           </h2>
-          <p className="font-sans text-base md:text-lg text-surface-bright/70 leading-relaxed">
+          <p className="font-heading font-normal text-base md:text-lg text-surface-bright/70 leading-relaxed">
             No hidden fees. Choose the service tier that fits your timeline.
           </p>
         </div>
 
         {/* Pricing Cards Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch max-w-6xl mx-auto">
-          {/* Card 1: Essential */}
-          <div className="relative flex flex-col justify-between p-8 md:p-10 rounded-xl bg-white border border-outline/5 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+        <Stagger className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch max-w-6xl mx-auto">
+          <StaggerItem className="relative flex flex-col justify-between p-8 md:p-10 rounded-xl bg-white border border-outline/5 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
             <div>
-              <h3 className="font-heading font-bold text-2xl text-[#0e1513] mb-2">
+              <h3 className="font-heading font-semibold text-2xl text-[#0e1513] mb-2">
                 Essential
               </h3>
-              <p className="font-sans text-sm text-surface-bright/60 mb-8">
+              <p className="font-heading font-normal text-sm text-surface-bright/60 mb-8">
                 For regular weekly needs.
               </p>
 
               <div className="flex items-baseline gap-1 mb-8">
-                <span className="font-heading font-bold text-5xl md:text-6xl text-[#0e1513] tracking-tight">
+                <span className="font-sans font-medium text-5xl md:text-6xl text-[#0e1513] tracking-tight">
                   $41.99
                 </span>
-                <span className="font-sans text-sm text-surface-bright/60">
+                <span className="font-sans font-normal text-sm text-surface-bright/60">
                   /bag
                 </span>
               </div>
 
-              {/* Features */}
               <ul className="space-y-4 mb-10">
-                <li className="flex items-center gap-3">
-                  <svg
-                    className="w-5 h-5 text-primary-container shrink-0"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M4.5 12.75l6 6 9-13.5"
-                    ></path>
-                  </svg>
-                  <span className="font-sans text-sm md:text-base text-surface-bright/80 font-medium">
-                    48-hour turnaround
-                  </span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <svg
-                    className="w-5 h-5 text-primary-container shrink-0"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M4.5 12.75l6 6 9-13.5"
-                    ></path>
-                  </svg>
-                  <span className="font-sans text-sm md:text-base text-surface-bright/80 font-medium">
-                    Standard fold
-                  </span>
-                </li>
+                {essentialFeatures.map((feature) => (
+                  <li key={feature} className="flex items-center gap-3">
+                    <CheckIcon />
+                    <span className="font-heading font-normal text-sm md:text-base text-surface-bright/80">
+                      {feature}
+                    </span>
+                  </li>
+                ))}
               </ul>
             </div>
 
             <a
               href="#schedule"
-              className="w-full py-4 text-center font-sans text-sm font-bold border-2 border-[#0e1513] text-[#0e1513] rounded-lg hover:bg-[#0e1513] hover:text-white transition-all duration-200"
+              className="w-full py-4 text-center font-sans text-sm font-medium border-2 border-[#0e1513] text-[#0e1513] rounded-lg hover:bg-[#0e1513] hover:text-white transition-all duration-200"
             >
               Get Started
             </a>
-          </div>
+          </StaggerItem>
 
-          {/* Card 2: Express (Highlighted) */}
-          <div className="relative flex flex-col justify-between p-8 md:p-10 rounded-xl bg-white border-2 border-primary shadow-xl shadow-primary/5 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 lg:scale-[1.03] z-10">
-            {/* Gold Highlight Badge */}
-            <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-secondary text-[#402d00] font-sans text-[10px] font-bold tracking-widest uppercase px-4 py-1.5 rounded-full shadow-md">
+          <StaggerItem className="relative flex flex-col justify-between p-8 md:p-10 rounded-xl bg-white border-2 border-primary shadow-xl shadow-primary/5 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 lg:scale-[1.03] z-10">
+            <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#00C2A8] text-[#00382f] font-sans text-[10px] font-medium tracking-widest uppercase px-4 py-1.5 rounded-full shadow-md">
               Most Popular
             </div>
 
             <div>
-              <h3 className="font-heading font-bold text-2xl text-[#0e1513] mb-2 mt-2">
+              <h3 className="font-heading font-semibold text-2xl text-[#0e1513] mb-2 mt-2">
                 Express
               </h3>
-              <p className="font-sans text-sm text-surface-bright/60 mb-8">
-                The professional standard.
+              <p className="font-heading font-normal text-sm text-surface-bright/60 mb-8">
+                Same day. Priority everything.
               </p>
 
               <div className="flex items-baseline gap-1 mb-8">
-                <span className="font-heading font-bold text-5xl md:text-6xl text-[#0e1513] tracking-tight">
+                <span className="font-sans font-medium text-5xl md:text-6xl text-[#0e1513] tracking-tight">
                   $53.49
                 </span>
-                <span className="font-sans text-sm text-surface-bright/60">
+                <span className="font-sans font-normal text-sm text-surface-bright/60">
                   /bag
                 </span>
               </div>
 
-              {/* Features */}
               <ul className="space-y-4 mb-10">
-                <li className="flex items-center gap-3">
-                  <svg
-                    className="w-5 h-5 text-primary-container shrink-0"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M4.5 12.75l6 6 9-13.5"
-                    ></path>
-                  </svg>
-                  <span className="font-sans text-sm md:text-base text-surface-bright/80 font-medium">
-                    24-hour turnaround
-                  </span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <svg
-                    className="w-5 h-5 text-primary-container shrink-0"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M4.5 12.75l6 6 9-13.5"
-                    ></path>
-                  </svg>
-                  <span className="font-sans text-sm md:text-base text-surface-bright/80 font-medium">
-                    Premium fold & hang
-                  </span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <svg
-                    className="w-5 h-5 text-primary-container shrink-0"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M4.5 12.75l6 6 9-13.5"
-                    ></path>
-                  </svg>
-                  <span className="font-sans text-sm md:text-base text-surface-bright/80 font-medium">
-                    Priority support
-                  </span>
-                </li>
+                {expressFeatures.map((feature) => (
+                  <li key={feature} className="flex items-center gap-3">
+                    <CheckIcon />
+                    <span className="font-heading font-normal text-sm md:text-base text-surface-bright/80">
+                      {feature}
+                    </span>
+                  </li>
+                ))}
               </ul>
             </div>
 
             <a
               href="#schedule"
-              className="w-full py-4 text-center font-sans text-sm font-bold bg-[#006052] text-white hover:bg-[#00493e] rounded-lg shadow-md transition-all duration-200"
+              className="w-full py-4 text-center font-sans text-sm font-medium bg-[#006052] text-white hover:bg-[#00493e] rounded-lg shadow-md transition-all duration-200"
             >
               Get Started
             </a>
-          </div>
+          </StaggerItem>
 
-          {/* Card 3: Rush */}
-          <div className="relative flex flex-col justify-between p-8 md:p-10 rounded-xl bg-white border border-outline/5 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+          <StaggerItem className="relative flex flex-col justify-between p-8 md:p-10 rounded-xl bg-white border border-outline/5 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
             <div>
-              <h3 className="font-heading font-bold text-2xl text-[#0e1513] mb-2">
+              <h3 className="font-heading font-semibold text-2xl text-[#0e1513] mb-2">
                 Rush
               </h3>
-              <p className="font-sans text-sm text-surface-bright/60 mb-8">
+              <p className="font-heading font-normal text-sm text-surface-bright/60 mb-8">
                 When time is critical.
               </p>
 
               <div className="flex items-baseline gap-1 mb-8">
-                <span className="font-heading font-bold text-5xl md:text-6xl text-[#0e1513] tracking-tight">
+                <span className="font-sans font-medium text-5xl md:text-6xl text-[#0e1513] tracking-tight">
                   $64.99
                 </span>
-                <span className="font-sans text-sm text-surface-bright/60">
+                <span className="font-sans font-normal text-sm text-surface-bright/60">
                   /bag
                 </span>
               </div>
 
-              {/* Features */}
               <ul className="space-y-4 mb-10">
-                <li className="flex items-center gap-3">
-                  <svg
-                    className="w-5 h-5 text-primary-container shrink-0"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M4.5 12.75l6 6 9-13.5"
-                    ></path>
-                  </svg>
-                  <span className="font-sans text-sm md:text-base text-surface-bright/80 font-medium">
-                    Same-day turnaround
-                  </span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <svg
-                    className="w-5 h-5 text-primary-container shrink-0"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M4.5 12.75l6 6 9-13.5"
-                    ></path>
-                  </svg>
-                  <span className="font-sans text-sm md:text-base text-surface-bright/80 font-medium">
-                    White-glove delivery
-                  </span>
-                </li>
+                {rushFeatures.map((feature) => (
+                  <li key={feature} className="flex items-center gap-3">
+                    <CheckIcon />
+                    <span className="font-heading font-normal text-sm md:text-base text-surface-bright/80">
+                      {feature}
+                    </span>
+                  </li>
+                ))}
               </ul>
             </div>
 
             <a
               href="#schedule"
-              className="w-full py-4 text-center font-sans text-sm font-bold border-2 border-[#0e1513] text-[#0e1513] rounded-lg hover:bg-[#0e1513] hover:text-white transition-all duration-200"
+              className="w-full py-4 text-center font-sans text-sm font-medium border-2 border-[#0e1513] text-[#0e1513] rounded-lg hover:bg-[#0e1513] hover:text-white transition-all duration-200"
             >
               Get Started
             </a>
-          </div>
-        </div>
+          </StaggerItem>
+        </Stagger>
       </div>
-    </section>
+    </Reveal>
   );
 }

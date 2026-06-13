@@ -1,31 +1,38 @@
-import React from "react";
+"use client";
+
+import { motion, useReducedMotion } from "framer-motion";
+import { appleEase } from "@/lib/motion";
 
 export default function SocialProofBar() {
+  const reduceMotion = useReducedMotion();
   const items = [
     { text: "LAUNCHING JUNE 25, 2026", highlight: true },
     { text: "FIRST 100 CUSTOMERS GET THEIR FIRST BAG FREE", highlight: false },
     { text: "SERVING BACK BAY, BROOKLINE, FENWAY...", highlight: false },
   ];
 
-  // Duplicate items 3 times for a seamless loop
   const tickerItems = [...items, ...items, ...items];
 
   return (
-    <div className="w-full bg-surface-variant/80 border-y border-outline-variant/30 py-4 overflow-hidden relative">
+    <motion.div
+      className="w-full bg-surface-variant/80 border-y border-outline-variant/30 py-4 overflow-hidden relative"
+      initial={reduceMotion ? false : { opacity: 0, y: 8 }}
+      animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 0.4, ease: appleEase }}
+    >
       <div className="animate-marquee whitespace-nowrap">
         {tickerItems.map((item, idx) => (
-          <div key={idx} className="inline-flex items-center mx-8 shrink-0">
-            <span className="w-2.5 h-2.5 rounded-full bg-primary mr-6"></span>
-            <span
-              className={`font-sans text-xs md:text-sm font-bold uppercase tracking-widest ${
-                item.highlight ? "text-primary" : "text-on-surface"
-              }`}
-            >
-              {item.text}
-            </span>
-          </div>
+          <span
+            key={idx}
+            className={`inline-flex items-center mx-8 font-sans text-xs font-medium tracking-widest uppercase ${
+              item.highlight ? "text-primary" : "text-on-surface-variant"
+            }`}
+          >
+            {item.text}
+            <span className="mx-8 text-outline-variant">•</span>
+          </span>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }

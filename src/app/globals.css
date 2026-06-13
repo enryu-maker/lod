@@ -1,32 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --color-surface: #0e1513;
-  --color-surface-dim: #0e1513;
+  --color-surface: #0A1628;
+  --color-surface-dim: #0A1628;
   --color-surface-bright: #333b38;
-  --color-surface-container-lowest: #09100e;
-  --color-surface-container-low: #161d1b;
-  --color-surface-container: #1a211f;
-  --color-surface-container-high: #242b29;
-  --color-surface-container-highest: #2f3634;
-  --color-on-surface: #dde4e1;
-  --color-on-surface-variant: #bbcac4;
-  --color-inverse-surface: #dde4e1;
-  --color-inverse-on-surface: #2b3230;
+  --color-surface-container-lowest: #07111f;
+  --color-surface-container-low: #0f1d32;
+  --color-surface-container: #142238;
+  --color-surface-container-high: #1c2d45;
+  --color-surface-container-highest: #243652;
+  --color-on-surface: #ffffff;
+  --color-on-surface-variant: rgba(255, 255, 255, 0.65);
+  --color-inverse-surface: #ffffff;
+  --color-inverse-on-surface: #0A1628;
   --color-outline: #85948f;
   --color-outline-variant: #3c4a46;
-  --color-surface-tint: #41ddc2;
+  --color-surface-tint: #00C2A8;
   
-  --color-primary: #42dec3;
+  --color-primary: #00C2A8;
   --color-on-primary: #00382f;
-  --color-primary-container: #00c2a8;
+  --color-primary-container: #00C2A8;
   --color-on-primary-container: #00493e;
   --color-inverse-primary: #006b5c;
   
-  --color-secondary: #eec058;
+  --color-secondary: #D4A843;
   --color-on-secondary: #402d00;
-  --color-secondary-container: #8e6a00;
+  --color-secondary-container: #D4A843;
   --color-on-secondary-container: #fff3e1;
   
   --color-tertiary: #ffb6a0;
@@ -39,17 +39,18 @@
   --color-error-container: #93000a;
   --color-on-error-container: #ffdad6;
   
-  --color-lod-navy: #0e1513;
-  --color-lod-teal: #42dec3;
-  --color-lod-gold: #eec058;
+  --color-lod-navy: #0A1628;
+  --color-lod-teal: #00C2A8;
+  --color-lod-gold: #D4A843;
+  --color-lod-grey: #F4F6F8;
 
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui;
-  --font-heading: var(--font-plus-jakarta), ui-sans-serif, system-ui;
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-plus-jakarta);
 }
 
 :root {
-  --background: #0e1513;
-  --foreground: #dde4e1;
+  --background: #0A1628;
+  --foreground: #ffffff;
   --font-inter: 'Inter', sans-serif;
   --font-plus-jakarta: 'Plus Jakarta Sans', sans-serif;
 }
@@ -57,11 +58,23 @@
 body {
   background-color: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans);
+  font-family: var(--font-plus-jakarta);
+  font-weight: 400;
   overflow-x: hidden;
 }
 
-/* Custom styles for animations & premium UI elements */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Custom styles for animations & UI elements */
 @keyframes marquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(-33.333%); }
@@ -73,12 +86,12 @@ body {
   animation: marquee 25s linear infinite;
 }
 
-/* Custom scrollbar to match dark premium theme */
+/* Custom scrollbar to match dark theme */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #09100e;
+  background: #07111f;
 }
 ::-webkit-scrollbar-thumb {
   background: #242b29;

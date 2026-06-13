@@ -1,6 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
+import { ChevronDown } from "lucide-react";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import Reveal from "@/components/motion/Reveal";
+import { Stagger, StaggerItem } from "@/components/motion/Stagger";
+import { appleEase } from "@/lib/motion";
 
 interface FAQItem {
   question: string;
@@ -9,6 +14,7 @@ interface FAQItem {
 
 export default function FAQAccordion() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const reduceMotion = useReducedMotion();
 
   const faqs: FAQItem[] = [
     {
@@ -38,7 +44,7 @@ export default function FAQAccordion() {
   };
 
   return (
-    <section id="faq" className="py-24 md:py-32 bg-[#161D1B]">
+    <Reveal as="section" id="faq" className="py-24 md:py-32 bg-[#161D1B]">
       <div className="max-w-[1440px] mx-auto px-5 md:px-12 lg:px-[120px]">
         {/* Title */}
         <h2 className="font-heading font-bold text-3xl sm:text-4xl md:text-5xl text-center text-white mb-16 md:mb-20">
@@ -46,13 +52,13 @@ export default function FAQAccordion() {
         </h2>
 
         {/* FAQ Accordion List */}
-        <div className="max-w-4xl mx-auto space-y-4">
+        <Stagger className="max-w-4xl mx-auto space-y-4">
           {faqs.map((faq, idx) => {
             const isOpen = openIndex === idx;
             return (
-              <div
+              <StaggerItem
                 key={idx}
-                className={`rounded-xl bg-surface-container border transition-all duration-300 ${
+                className={`rounded-xl bg-surface-container border overflow-hidden ${
                   isOpen
                     ? "border-primary/50 shadow-lg shadow-primary/5"
                     : "border-outline-variant/30 hover:border-outline-variant/60"
@@ -67,47 +73,43 @@ export default function FAQAccordion() {
                   <span className="font-heading font-semibold text-base md:text-lg text-white group-hover:text-primary transition-colors pr-6">
                     {faq.question}
                   </span>
-                  <span
-                    className={`text-primary shrink-0 transition-transform duration-300 ${
-                      isOpen ? "rotate-180" : "rotate-0"
-                    }`}
+                  <motion.span
+                    className="text-primary shrink-0"
+                    animate={{ rotate: isOpen ? 180 : 0 }}
+                    transition={{ duration: 0.35, ease: appleEase }}
                   >
-                    <svg
-                      className="w-5 h-5"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2.5"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-                      ></path>
-                    </svg>
-                  </span>
+                    <ChevronDown className="w-5 h-5" strokeWidth={2.5} aria-hidden="true" />
+                  </motion.span>
                 </button>
 
-                {/* Accordion Content */}
-                <div
-                  className={`grid transition-all duration-300 ease-in-out overflow-hidden ${
-                    isOpen
-                      ? "grid-rows-[1fr] opacity-100 border-t border-outline-variant/20"
-                      : "grid-rows-[0fr] opacity-0"
-                  }`}
-                >
-                  <div className="overflow-hidden">
-                    <p className="font-sans text-sm md:text-base text-on-surface-variant leading-relaxed p-6 md:p-8 bg-surface-container-low/50">
-                      {faq.answer}
-                    </p>
-                  </div>
-                </div>
-              </div>
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      initial={reduceMotion ? false : { height: 0, opacity: 0 }}
+                      animate={
+                        reduceMotion
+                          ? undefined
+                          : { height: "auto", opacity: 1 }
+                      }
+                      exit={
+                        reduceMotion
+                          ? undefined
+                          : { height: 0, opacity: 0 }
+                      }
+                      transition={{ duration: 0.4, ease: appleEase }}
+                      className="overflow-hidden border-t border-outline-variant/20"
+                    >
+                      <p className="font-heading font-normal text-sm md:text-base text-on-surface-variant leading-relaxed p-6 md:p-8 bg-surface-container-low/50">
+                        {faq.answer}
+                      </p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </StaggerItem>
             );
           })}
-        </div>
+        </Stagger>
       </div>
-    </section>
+    </Reveal>
   );
 }

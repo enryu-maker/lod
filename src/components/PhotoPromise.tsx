@@ -1,5 +1,7 @@
 import React from "react";
 import Image from "next/image";
+import Reveal from "@/components/motion/Reveal";
+import { Stagger, StaggerItem } from "@/components/motion/Stagger";
 
 interface PromiseCard {
   title: string;
@@ -32,23 +34,23 @@ export default function PhotoPromise() {
   ];
 
   return (
-    <section className="bg-surface py-24 md:py-32 relative overflow-hidden">
+    <Reveal as="section" className="bg-[#0A1628] py-24 md:py-32 relative overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-5 md:px-12 lg:px-[120px]">
         {/* Section Header */}
         <div className="mb-12 md:mb-16">
           <h2 className="font-heading font-bold text-3xl md:text-4xl lg:text-[40px] text-white mb-3 tracking-tight">
             Total Accountability.
           </h2>
-          <p className="font-sans text-primary text-sm md:text-base lg:text-lg font-semibold tracking-wide uppercase">
+          <p className="font-heading font-semibold text-primary text-sm md:text-base lg:text-lg tracking-wide uppercase">
             Every single step. Photographed. Timestamped. Stored.
           </p>
         </div>
 
         {/* Accountability Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        <Stagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {cards.map((card, idx) => (
-            <div 
-              key={idx} 
+            <StaggerItem
+              key={idx}
               className="group relative aspect-[3/4] w-full rounded-xl overflow-hidden shadow-sm border border-outline-variant/10 bg-surface-container-low"
             >
               {/* Image Container */}
@@ -64,7 +66,7 @@ export default function PhotoPromise() {
               </div>
 
               {/* Dark Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent z-10 transition-opacity duration-300 group-hover:opacity-90" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0A1628]/85 via-[#0A1628]/30 to-transparent z-10 transition-opacity duration-300 group-hover:opacity-90" />
 
               {/* Overlaid Bottom Title */}
               <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
@@ -72,10 +74,10 @@ export default function PhotoPromise() {
                   {card.title}
                 </h3>
               </div>
-            </div>
+            </StaggerItem>
           ))}
-        </div>
+        </Stagger>
       </div>
-    </section>
+    </Reveal>
   );
 }

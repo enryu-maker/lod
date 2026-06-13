@@ -8,7 +8,6 @@ import StatMatrix from "@/components/StatMatrix";
 import ServiceAreas from "@/components/ServiceAreas";
 import FAQAccordion from "@/components/FAQAccordion";
 import FinalCTA from "@/components/FinalCTA";
-import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -25,7 +24,6 @@ export default function Home() {
         <FAQAccordion />
         <FinalCTA />
       </main>
-      <Footer />
     </>
   );
 }
