@@ -32,7 +32,7 @@ export default function PhotoPromise() {
   ];
 
   return (
-    <section className="bg-surface pb-24 md:pb-32 relative overflow-hidden">
+    <section className="bg-surface py-24 md:py-32 relative overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-5 md:px-12 lg:px-[120px]">
         {/* Section Header */}
         <div className="mb-12 md:mb-16">

@@ -2,7 +2,7 @@ import React from "react";
 
 export default function OrderHero() {
   return (
-    <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-surface">
+    <section className="relative pt-36 pb-20 md:pt-64 md:pb-28 overflow-hidden bg-surface">
       {/* Subtle background gradient to match the design's soft cyan glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(66,222,195,0.08),transparent_50%)]" />
       
