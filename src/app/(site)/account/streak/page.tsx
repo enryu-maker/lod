@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Navbar from "@/components/Navbar";
 import StreakProgramContent from "@/components/account/StreakProgramContent";
 
 export const metadata: Metadata = {
@@ -7,5 +8,12 @@ export const metadata: Metadata = {
 };
 
 export default function StreakPage() {
-  return <StreakProgramContent />;
+  return (
+    <>
+      <Navbar />
+      <main>
+        <StreakProgramContent />
+      </main>
+    </>
+  );
 }

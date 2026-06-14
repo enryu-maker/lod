@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Navbar from "@/components/Navbar";
 import ReferralProgramContent from "@/components/account/ReferralProgramContent";
 
 export const metadata: Metadata = {
@@ -7,5 +8,12 @@ export const metadata: Metadata = {
 };
 
 export default function ReferralsPage() {
-  return <ReferralProgramContent />;
+  return (
+    <>
+      <Navbar />
+      <main>
+        <ReferralProgramContent />
+      </main>
+    </>
+  );
 }
