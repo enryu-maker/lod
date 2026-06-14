@@ -8,7 +8,7 @@ export default function OrderHero() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section className="relative pt-36 pb-20 md:pt-64 md:pb-28 overflow-hidden bg-[#0A1628]">
+    <section className="relative pt-12 pb-20 md:pt-16 md:pb-28 overflow-hidden bg-[#0A1628]">
       <div className="max-w-[1440px] mx-auto px-5 md:px-12 lg:px-[120px] relative z-10 text-center">
         <Stagger className="max-w-3xl mx-auto" animateOnMount stagger={0.12}>
           <StaggerItem>

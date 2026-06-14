@@ -1,4 +1,5 @@
 import Footer from "@/components/Footer";
+import CookieConsentBanner from "@/components/policy/CookieConsentBanner";
 
 export default function SiteLayout({
   children,
@@ -9,6 +10,7 @@ export default function SiteLayout({
     <>
       {children}
       <Footer />
+      <CookieConsentBanner />
     </>
   );
 }

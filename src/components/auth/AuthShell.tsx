@@ -1,8 +1,10 @@
 "use client";
 
+import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
 import { CircleCheck } from "lucide-react";
+import LodWordmark from "@/components/LodWordmark";
 import {
   authBenefits,
   getAuthPanelContent,
@@ -57,6 +59,69 @@ function SignupProgress({ step }: { step: SignupStep }) {
   );
 }
 
+function BrandPanelContent({
+  panelKey,
+  panel,
+}: {
+  panelKey: string;
+  panel: ReturnType<typeof getAuthPanelContent>;
+}) {
+  const reduceMotion = useReducedMotion();
+
+  if (panel.layout === "logo-focused") {
+    return (
+      <motion.div
+        key={panelKey}
+        className="flex flex-col flex-1 justify-center py-10"
+        initial={reduceMotion ? false : { opacity: 0, y: 16 }}
+        animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: appleEase }}
+      >
+        <Link href="/" aria-label="LOD home" className="w-fit">
+          <LodWordmark variant="white" className="h-14 xl:h-16 w-auto mb-8" />
+        </Link>
+        {panel.tagline && (
+          <p className="font-heading font-normal text-lg xl:text-xl text-white/70 leading-relaxed max-w-sm">
+            {panel.tagline}
+          </p>
+        )}
+      </motion.div>
+    );
+  }
+
+  return (
+    <AnimatePresence mode="wait">
+      <motion.div
+        key={panelKey}
+        className="flex flex-col flex-1 justify-center py-6"
+        initial={
+          reduceMotion ? false : { opacity: 0, y: 16, filter: "blur(4px)" }
+        }
+        animate={
+          reduceMotion
+            ? undefined
+            : { opacity: 1, y: 0, filter: "blur(0px)" }
+        }
+        exit={
+          reduceMotion ? undefined : { opacity: 0, y: -8, filter: "blur(4px)" }
+        }
+        transition={{ duration: 0.5, ease: appleEase }}
+      >
+        {panel.headline && (
+          <h1 className="font-heading font-bold text-3xl xl:text-[38px] leading-[1.15] text-white mb-3 max-w-md">
+            {panel.headline}
+          </h1>
+        )}
+        {panel.subhead && (
+          <p className="font-heading font-normal text-base text-white/60 leading-relaxed max-w-sm">
+            {panel.subhead}
+          </p>
+        )}
+      </motion.div>
+    </AnimatePresence>
+  );
+}
+
 export default function AuthShell({
   children,
   footer,
@@ -65,67 +130,39 @@ export default function AuthShell({
 }: AuthShellProps) {
   const panel = getAuthPanelContent(variant, signupStep);
   const reduceMotion = useReducedMotion();
-  const panelKey = `${variant}-${signupStep}`;
+  const panelKey =
+    variant === "forgot-password" ? "forgot-password" : "auth-brand";
 
   return (
     <section className="flex h-full min-h-0 flex-1 flex-col lg:flex-row overflow-hidden">
       <div className="relative hidden lg:flex lg:w-[44%] xl:w-[42%] h-full min-h-0 overflow-hidden bg-[#0A1628] shrink-0">
         <div
-          className="pointer-events-none absolute -top-24 -left-24 h-72 w-72 rounded-full bg-[#00C2A8]/20 blur-3xl"
-          aria-hidden="true"
-        />
-        <div
-          className="pointer-events-none absolute bottom-0 right-0 h-96 w-96 rounded-full bg-[#00C2A8]/10 blur-3xl"
-          aria-hidden="true"
-        />
-        <div
-          className="pointer-events-none absolute inset-0 opacity-[0.04]"
+          className="pointer-events-none absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.06]"
           style={{
-            backgroundImage:
-              "linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)",
-            backgroundSize: "48px 48px",
+            backgroundImage: "url('/Order-step/Image (4).png')",
           }}
           aria-hidden="true"
         />
+        <div
+          className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#0A1628] via-[#0A1628] to-[#00C2A8]/20"
+          aria-hidden="true"
+        />
+        <div
+          className="pointer-events-none absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-[#00C2A8]/10 to-transparent"
+          aria-hidden="true"
+        />
 
-        <div className="relative z-10 flex flex-col justify-between h-full w-full px-10 xl:px-12 py-8 xl:py-10 overflow-hidden">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={panelKey}
-              initial={
-                reduceMotion
-                  ? false
-                  : { opacity: 0, y: 20, filter: "blur(6px)" }
-              }
-              animate={
-                reduceMotion
-                  ? undefined
-                  : { opacity: 1, y: 0, filter: "blur(0px)" }
-              }
-              exit={
-                reduceMotion
-                  ? undefined
-                  : { opacity: 0, y: -12, filter: "blur(4px)" }
-              }
-              transition={{ duration: 0.55, ease: appleEase }}
-            >
-              <h1 className="font-heading font-bold text-3xl xl:text-[40px] leading-[1.12] text-white mb-3 max-w-md">
-                {panel.headline}
-              </h1>
-              <p className="font-heading font-normal text-base text-white/60 leading-relaxed max-w-sm">
-                {panel.subhead}
-              </p>
-            </motion.div>
-          </AnimatePresence>
+        <div className="relative z-10 flex flex-col h-full w-full px-10 xl:px-12 py-10 xl:py-12">
+          <BrandPanelContent panelKey={panelKey} panel={panel} />
 
           <motion.ul
-            className="flex flex-col gap-3.5"
+            className="flex flex-col gap-3.5 shrink-0 pt-6"
             initial="hidden"
             animate="visible"
             variants={{
               hidden: {},
               visible: {
-                transition: { staggerChildren: 0.08, delayChildren: 0.2 },
+                transition: { staggerChildren: 0.08, delayChildren: 0.15 },
               },
             }}
           >
@@ -134,11 +171,11 @@ export default function AuthShell({
                 key={benefit}
                 className="flex items-center gap-3"
                 variants={{
-                  hidden: { opacity: 0, x: -12 },
+                  hidden: { opacity: 0, x: -10 },
                   visible: {
                     opacity: 1,
                     x: 0,
-                    transition: { duration: 0.5, ease: appleEase },
+                    transition: { duration: 0.45, ease: appleEase },
                   },
                 }}
               >

@@ -247,24 +247,24 @@ export default function SignupStep1Account({
           )}
         </div>
 
-        <p className="font-sans font-normal text-xs text-[#6B7280] leading-relaxed">
-          By continuing you agree to our{" "}
-          <Link href="/terms" className="text-[#00C2A8] hover:underline">
-            Terms
-          </Link>{" "}
-          and{" "}
-          <Link href="/privacy" className="text-[#00C2A8] hover:underline">
-            Privacy Policy
-          </Link>
-          .
-        </p>
-
         <button
           type="submit"
           className="w-full font-sans text-sm font-medium uppercase tracking-wider bg-[#00C2A8] text-[#00382f] hover:bg-[#00C2A8]/90 px-8 py-4 rounded-lg transition-all duration-200 hover:scale-[1.01] shadow-md shadow-[#00C2A8]/20"
         >
           Create Account
         </button>
+
+        <p className="text-center font-sans text-xs text-[#6B7280] leading-relaxed">
+          By creating an account, you agree to LOD&apos;s{" "}
+          <Link href="/terms" target="_blank" className="text-[#00C2A8] underline hover:text-[#0A1628]">
+            Terms of Service
+          </Link>{" "}
+          and{" "}
+          <Link href="/privacy" target="_blank" className="text-[#00C2A8] underline hover:text-[#0A1628]">
+            Privacy Policy
+          </Link>
+          .
+        </p>
       </form>
     </>
   );

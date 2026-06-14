@@ -8,6 +8,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { appleEase } from "@/lib/motion";
 
 type NavbarProps = {
+  /** Auth pages: skip scroll-shrink styling */
   embedded?: boolean;
 };
 
@@ -17,8 +18,6 @@ export default function Navbar({ embedded = false }: NavbarProps) {
   const reduceMotion = useReducedMotion();
  
   useEffect(() => {
-    if (embedded) return;
-
     const handleScroll = () => {
       if (window.scrollY > 20) {
         setIsScrolled(true);
@@ -28,21 +27,19 @@ export default function Navbar({ embedded = false }: NavbarProps) {
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [embedded]);
+  }, []);
  
+  const compact = !embedded && isScrolled;
+
   return (
     <motion.header
-      initial={reduceMotion || embedded ? false : { opacity: 0, y: -12 }}
-      animate={reduceMotion || embedded ? undefined : { opacity: 1, y: 0 }}
+      initial={reduceMotion ? false : { opacity: 0, y: -12 }}
+      animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: appleEase }}
-      className={`z-50 transition-all duration-300 shrink-0 ${
-        embedded
-          ? "relative bg-[#0A1628CC] py-6 border-b border-transparent"
-          : `fixed top-0 left-0 right-0 ${
-              isScrolled
-                ? "bg-[#0A1628CC]/80 border-b border-outline-variant/30 backdrop-blur-xl py-4 shadow-lg shadow-surface-container-lowest/20"
-                : "bg-[#0A1628CC] py-6 border-b border-transparent"
-            }`
+      className={`sticky top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        compact
+          ? "bg-[#0A1628CC]/80 border-b border-outline-variant/30 backdrop-blur-xl py-4 shadow-lg shadow-surface-container-lowest/20"
+          : "bg-[#0A1628CC] py-6 border-b border-transparent"
       }`}
     >
       <div className="max-w-[1440px] mx-auto px-5 md:px-12 lg:px-[120px] flex items-center justify-between">
@@ -85,7 +82,7 @@ export default function Navbar({ embedded = false }: NavbarProps) {
             FAQ
           </Link>
           <Link
-            href="/#about"
+            href="/about"
             className="font-sans text-sm font-medium text-on-surface-variant hover:text-primary transition-colors duration-200"
           >
             About
@@ -124,9 +121,7 @@ export default function Navbar({ embedded = false }: NavbarProps) {
  
       {/* Mobile Drawer Navigation */}
       <div
-        className={`${
-          embedded ? "absolute" : "fixed"
-        } inset-x-0 top-full bg-surface-container border-b border-outline-variant/40 z-40 transition-all duration-300 lg:hidden ease-in-out ${
+        className={`absolute inset-x-0 top-full bg-surface-container border-b border-outline-variant/40 z-40 transition-all duration-300 lg:hidden ease-in-out ${
           isOpen
             ? "max-h-[400px] opacity-100 py-6 visible"
             : "max-h-0 opacity-0 overflow-hidden invisible"
@@ -162,7 +157,7 @@ export default function Navbar({ embedded = false }: NavbarProps) {
             FAQ
           </Link>
           <Link
-            href="/#about"
+            href="/about"
             onClick={() => setIsOpen(false)}
             className="font-sans text-base font-medium text-on-surface-variant hover:text-primary transition-colors w-full text-center py-2"
           >

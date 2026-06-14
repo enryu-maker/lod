@@ -126,8 +126,18 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/refunds" className={navLinkClass}>
+                <Link href="/refund-policy" className={navLinkClass}>
                   Refund Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/garment-protection" className={navLinkClass}>
+                  Garment Protection
+                </Link>
+              </li>
+              <li>
+                <Link href="/accessibility" className={navLinkClass}>
+                  Accessibility
                 </Link>
               </li>
             </ul>
@@ -135,10 +145,11 @@ export default function Footer() {
         </Stagger>
 
         {/* Bottom bar */}
-        <div className="border-t border-white/[0.08] pt-8">
+        <div className="border-t border-white/[0.08] pt-8 space-y-3">
           <p className="font-sans font-normal text-xs text-white/30">
             © 2026 LOD LLC. Boston, MA. All rights reserved.
           </p>
+          
         </div>
       </div>
     </Reveal>

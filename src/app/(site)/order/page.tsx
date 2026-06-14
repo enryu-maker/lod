@@ -10,7 +10,7 @@ export default function OrderPage() {
   return (
     <>
       <Navbar />
-      <main className="flex-grow bg-[#0A1628] min-h-[60vh] flex items-center justify-center px-5 py-32">
+      <main className="flex-grow bg-[#0A1628] min-h-[60vh] flex items-center justify-center px-5 py-16 md:py-24">
         <div className="text-center max-w-md">
           <h1 className="font-heading font-bold text-3xl md:text-4xl text-white mb-4">
             Schedule your pickup

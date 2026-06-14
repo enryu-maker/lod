@@ -56,7 +56,7 @@ export default function Pricing() {
                 Essential
               </h3>
               <p className="font-heading font-normal text-sm text-surface-bright/60 mb-8">
-                For regular weekly needs.
+                [ Next Day — 24hrs ]
               </p>
 
               <div className="flex items-baseline gap-1 mb-8">
