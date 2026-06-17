@@ -160,7 +160,7 @@ export default function AreasPageContent() {
             Schedule a pickup in 60 seconds and stopped losing your weekends.
           </p>
           <Link
-            href="/order"
+            href="/signup"
             className="inline-flex font-heading font-bold text-base bg-[#00C2A8] text-[#0A1628] px-10 py-4 rounded-lg hover:scale-[1.02] active:scale-[0.98] transition-all text-center cursor-pointer shadow-md shadow-[#00C2A8]/10"
           >
             Schedule Your Pickup

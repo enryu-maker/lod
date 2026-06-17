@@ -104,7 +104,7 @@ export default function Navbar({ embedded = false }: NavbarProps) {
             Log In
           </Link>
           <Link
-            href="/order"
+            href="/signup"
             className="font-sans text-xs font-medium uppercase tracking-wider bg-primary text-on-primary hover:bg-primary-container px-6 py-3 rounded-lg transition-all duration-200 hover:scale-[1.03]"
           >
             Schedule Pickup
@@ -186,7 +186,7 @@ export default function Navbar({ embedded = false }: NavbarProps) {
               Log In
             </Link>
             <Link
-              href="/order"
+              href="/signup"
               onClick={() => setIsOpen(false)}
               className="font-sans text-xs font-medium uppercase tracking-wider bg-primary text-on-primary hover:bg-primary-container px-8 py-3.5 rounded-lg transition-all w-full text-center"
             >

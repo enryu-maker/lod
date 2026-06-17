@@ -20,7 +20,7 @@ export default function FinalCTA() {
           Ready to get your time back?
         </h2>
         <motion.a
-          href="/order"
+          href="/signup"
           className="inline-flex items-center gap-2.5 font-sans text-sm font-medium uppercase tracking-wider bg-primary text-on-primary hover:bg-primary-container px-10 py-5 rounded-lg shadow-lg shadow-primary/10"
           {...(reduceMotion ? {} : pressableProps)}
         >

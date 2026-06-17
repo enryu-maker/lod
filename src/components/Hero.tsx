@@ -45,7 +45,7 @@ export default function Hero() {
           <StaggerItem>
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-5 w-full sm:w-auto mb-12">
               <motion.a
-                href="/order"
+                href="/signup"
                 className="group font-sans text-sm font-medium uppercase tracking-wider text-center bg-primary text-on-primary hover:bg-primary-container px-8 py-4.5 rounded-lg flex items-center justify-center gap-2"
                 {...(reduceMotion ? {} : pressableProps)}
               >

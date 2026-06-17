@@ -19,7 +19,7 @@ export default function AccountPage() {
             Schedule pickups, track orders, and manage your LOD preferences.
           </p>
           <Link
-            href="/order"
+            href="/signup"
             className="inline-flex font-sans text-sm font-medium uppercase tracking-wider bg-[#00C2A8] text-[#00382f] hover:bg-[#00C2A8]/90 px-8 py-4 rounded-lg transition-all duration-200"
           >
             Schedule a pickup

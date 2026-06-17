@@ -200,7 +200,7 @@ export default function AboutPageContent() {
           </p>
           <motion.div {...(reduceMotion ? {} : pressableProps)}>
             <Link
-              href="/order"
+              href="/signup"
               className="inline-flex font-heading font-bold text-lg bg-[#00C2A8] text-[#0A1628] px-12 py-[18px] rounded-lg hover:bg-[#00C2A8]/90 transition-colors"
             >
               Schedule Your First Pickup
