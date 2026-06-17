@@ -52,7 +52,7 @@ export default function Pricing() {
         {/* Pricing Cards Grid */}
         <Stagger className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch max-w-6xl mx-auto">
           {/* Essential Card - slight grey background */}
-          <StaggerItem className="relative flex flex-col justify-between p-8 md:p-10 rounded-xl bg-[#f7f9f8] border border-outline/5 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+          <StaggerItem className="relative flex flex-col justify-between p-8 md:p-10 rounded-xl bg-[#f7f9f8] border border-outline/5 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 max-w-md mx-auto lg:max-w-none w-full">
             <div>
               <h3 className="font-heading font-semibold text-2xl text-[#0e1513] mb-2">
                 Essential
@@ -91,7 +91,7 @@ export default function Pricing() {
           </StaggerItem>
 
           {/* Express Card - standard premium white */}
-          <StaggerItem className="relative flex flex-col justify-between p-8 md:p-10 rounded-xl bg-white border-2 border-primary shadow-xl shadow-primary/5 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 lg:scale-[1.03] z-10">
+          <StaggerItem className="relative flex flex-col justify-between p-8 md:p-10 rounded-xl bg-white border-2 border-primary shadow-xl shadow-primary/5 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 lg:scale-[1.03] z-10 max-w-md mx-auto lg:max-w-none w-full">
             <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#00C2A8] text-[#00382f] font-sans text-[10px] font-medium tracking-widest uppercase px-4 py-1.5 rounded-full shadow-md">
               Most Popular
             </div>
@@ -134,7 +134,7 @@ export default function Pricing() {
           </StaggerItem>
 
           {/* Rush Card - LOD Navy background, high-contrast white details */}
-          <StaggerItem className="relative flex flex-col justify-between p-8 md:p-10 rounded-xl bg-[#0A1628] border border-white/10 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 text-white">
+          <StaggerItem className="relative flex flex-col justify-between p-8 md:p-10 rounded-xl bg-[#0A1628] border border-white/10 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 text-white max-w-md mx-auto lg:max-w-none w-full">
             <div>
               <h3 className="font-heading font-semibold text-2xl text-white mb-2">
                 Rush

@@ -20,7 +20,7 @@ export default function HowItWorks() {
         </div>
 
         <Stagger className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <StaggerItem className="relative flex flex-col items-start p-8 md:p-10 rounded-[20px] bg-[#f7f9f8] border border-outline/10 transition-transform duration-300 hover:-translate-y-1">
+          <StaggerItem className="relative flex flex-col items-start p-8 md:p-10 rounded-[20px] bg-[#f7f9f8] border border-outline/10 transition-transform duration-300 hover:-translate-y-1 max-w-md mx-auto md:max-w-none w-full">
             <div className="w-12 h-12 rounded-full bg-outline-variant/10 text-surface-bright flex items-center justify-center font-sans font-medium text-base mb-8">
               01
             </div>
@@ -33,7 +33,7 @@ export default function HowItWorks() {
             </p>
           </StaggerItem>
 
-          <StaggerItem className="relative flex flex-col items-start p-8 md:p-10 rounded-[20px] bg-white border-2 border-primary shadow-xl shadow-primary/5 transition-transform duration-300 hover:-translate-y-1">
+          <StaggerItem className="relative flex flex-col items-start p-8 md:p-10 rounded-[20px] bg-white border-2 border-primary shadow-xl shadow-primary/5 transition-transform duration-300 hover:-translate-y-1 max-w-md mx-auto md:max-w-none w-full">
             <div className="absolute top-8 right-8 inline-flex items-center px-3 py-1 rounded-full border border-[#00C2A8] font-sans text-[10px] font-medium tracking-widest text-[#00C2A8] uppercase">
               HANDLED.
             </div>
@@ -50,7 +50,7 @@ export default function HowItWorks() {
             </p>
           </StaggerItem>
 
-          <StaggerItem className="relative flex flex-col items-start p-8 md:p-10 rounded-[20px] bg-[#f7f9f8] border border-outline/10 transition-transform duration-300 hover:-translate-y-1">
+          <StaggerItem className="relative flex flex-col items-start p-8 md:p-10 rounded-[20px] bg-[#f7f9f8] border border-outline/10 transition-transform duration-300 hover:-translate-y-1 max-w-md mx-auto md:max-w-none w-full">
             <div className="w-12 h-12 rounded-full bg-outline-variant/10 text-surface-bright flex items-center justify-center font-sans font-medium text-base mb-8">
               03
             </div>

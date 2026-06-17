@@ -98,7 +98,7 @@ export default function DetailedMatrix() {
           {steps.map((step) => (
             <StaggerItem
               key={step.id}
-              className={`relative flex flex-col items-start p-8 md:p-10 rounded-[20px] transition-transform duration-300 hover:-translate-y-1 ${
+              className={`relative flex flex-col items-start p-8 md:p-10 rounded-[20px] transition-transform duration-300 hover:-translate-y-1 max-w-md mx-auto md:max-w-none w-full ${
                 step.highlighted
                   ? "bg-white border-2 border-primary shadow-xl shadow-primary/5"
                   : "bg-[#f7f9f8] border border-outline/10"

@@ -364,7 +364,7 @@ export default function ReferralPublicContent() {
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 relative z-10 items-stretch">
               {/* Step 1 */}
-              <div className="bg-[#F4F6F8] rounded-[20px] p-8 md:p-10 flex flex-col items-center text-center shadow-[0_4px_12px_rgba(0,0,0,0.02)]">
+              <div className="bg-[#F4F6F8] rounded-[20px] p-8 md:p-10 flex flex-col items-center text-center shadow-[0_4px_12px_rgba(0,0,0,0.02)] max-w-md mx-auto lg:max-w-none w-full">
                 <span className="font-heading font-bold text-4xl md:text-[48px] text-[#00C2A8]/20 leading-none mb-4">
                   01
                 </span>
@@ -380,7 +380,7 @@ export default function ReferralPublicContent() {
               </div>
 
               {/* Step 2 */}
-              <div className="bg-[#F4F6F8] rounded-[20px] p-8 md:p-10 flex flex-col items-center text-center shadow-[0_4px_12px_rgba(0,0,0,0.02)]">
+              <div className="bg-[#F4F6F8] rounded-[20px] p-8 md:p-10 flex flex-col items-center text-center shadow-[0_4px_12px_rgba(0,0,0,0.02)] max-w-md mx-auto lg:max-w-none w-full">
                 <span className="font-heading font-bold text-4xl md:text-[48px] text-[#00C2A8]/20 leading-none mb-4">
                   02
                 </span>
@@ -396,7 +396,7 @@ export default function ReferralPublicContent() {
               </div>
 
               {/* Step 3 */}
-              <div className="bg-[#F4F6F8] rounded-[20px] p-8 md:p-10 flex flex-col items-center text-center shadow-[0_4px_12px_rgba(0,0,0,0.02)]">
+              <div className="bg-[#F4F6F8] rounded-[20px] p-8 md:p-10 flex flex-col items-center text-center shadow-[0_4px_12px_rgba(0,0,0,0.02)] max-w-md mx-auto lg:max-w-none w-full">
                 <span className="font-heading font-bold text-4xl md:text-[48px] text-[#00C2A8]/20 leading-none mb-4">
                   03
                 </span>
@@ -575,7 +575,7 @@ export default function ReferralPublicContent() {
             ].map((persona, index) => (
               <div
                 key={index}
-                className="bg-[#F4F6F8] rounded-2xl p-7 md:p-8 flex flex-col items-center text-center shadow-[0_2px_10px_rgba(0,0,0,0.01)] transition-all hover:scale-[1.01]"
+                className="bg-[#F4F6F8] rounded-2xl p-7 md:p-8 flex flex-col items-center text-center shadow-[0_2px_10px_rgba(0,0,0,0.01)] transition-all hover:scale-[1.01] max-w-md mx-auto md:max-w-none w-full"
               >
                 <div className="h-16 w-16 rounded-full bg-white shadow-sm flex items-center justify-center mb-5 shrink-0">
                   {persona.icon}

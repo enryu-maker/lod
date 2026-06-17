@@ -72,7 +72,7 @@ export default function AreasPageContent() {
           {activeAreas.map((area) => (
             <StaggerItem
               key={area.name}
-              className="bg-white/4 border border-white/8 rounded-2xl p-6 text-left flex flex-col justify-between hover:border-[#00C2A8]/30 transition-all duration-300 hover:scale-[1.01]"
+              className="bg-white/4 border border-white/8 rounded-2xl p-6 text-left flex flex-col justify-between hover:border-[#00C2A8]/30 transition-all duration-300 hover:scale-[1.01] max-w-md mx-auto md:max-w-none w-full"
             >
               <div>
                 <div className="flex items-center gap-2 mb-4">
@@ -108,7 +108,7 @@ export default function AreasPageContent() {
             {upcomingAreas.map((name) => (
               <StaggerItem
                 key={name}
-                className="bg-white/3 border border-white/6 rounded-2xl p-6 text-left flex flex-col justify-between"
+                className="bg-white/3 border border-white/6 rounded-2xl p-6 text-left flex flex-col justify-between max-w-md mx-auto sm:max-w-none w-full"
               >
                 <div>
                   <h3 className="font-heading font-bold text-lg text-white/45 mb-1">
@@ -130,9 +130,8 @@ export default function AreasPageContent() {
           </Stagger>
         </div>
 
-        {/* Notify Banner */}
-        <Reveal className="bg-white/4 border border-white/8 rounded-2xl p-6 md:p-8 flex items-start gap-4 text-left max-w-3xl mx-auto">
-          <Info className="h-6 w-6 text-[#00C2A8] shrink-0 mt-0.5" />
+        <Reveal className="bg-white/4 border border-white/8 rounded-2xl p-6 md:p-8 flex flex-col sm:flex-row items-center sm:items-start gap-4 text-center sm:text-left max-w-3xl mx-auto">
+          <Info className="h-6 w-6 text-[#00C2A8] shrink-0" />
           <div>
             <h4 className="font-heading font-bold text-base text-white mb-1">
               Don&apos;t see your neighborhood?

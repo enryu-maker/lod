@@ -25,7 +25,7 @@ export default function ServiceAreas() {
           {activeAreas.map((name) => (
             <StaggerItem
               key={name}
-              className="flex flex-col gap-3 px-5 py-5 rounded-xl bg-white border-l-[3px] border-l-[#00C2A8] shadow-sm"
+              className="flex flex-col gap-3 px-5 py-5 rounded-xl bg-white border-l-[3px] border-l-[#00C2A8] shadow-sm max-w-md mx-auto sm:max-w-none w-full"
             >
               <span className="font-heading font-bold text-[18px] leading-snug text-[#0A1628]">
                 {name}
@@ -39,7 +39,7 @@ export default function ServiceAreas() {
           {upcomingAreas.map((name) => (
             <StaggerItem
               key={name}
-              className="flex flex-col gap-3 px-5 py-5 rounded-xl bg-white border-l-[3px] border-l-[#E8EAED] shadow-sm"
+              className="flex flex-col gap-3 px-5 py-5 rounded-xl bg-white border-l-[3px] border-l-[#E8EAED] shadow-sm max-w-md mx-auto sm:max-w-none w-full"
             >
               <div className="flex flex-col gap-2">
                 <span className="font-heading font-bold text-[18px] leading-snug text-[#6B7280]">

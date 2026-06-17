@@ -51,7 +51,7 @@ export default function PhotoPromise() {
           {cards.map((card, idx) => (
             <StaggerItem
               key={idx}
-              className="group relative aspect-[3/4] w-full rounded-xl overflow-hidden shadow-sm border border-outline-variant/10 bg-surface-container-low"
+              className="group relative aspect-[3/4] w-full rounded-xl overflow-hidden shadow-sm border border-outline-variant/10 bg-surface-container-low max-w-md mx-auto sm:max-w-none"
             >
               {/* Image Container */}
               <div className="absolute inset-0 w-full h-full">
