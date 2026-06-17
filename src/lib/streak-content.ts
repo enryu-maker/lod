@@ -24,7 +24,7 @@ export const milestones = [
     bags: null,
     label: "8 Weeks Active",
     reward: "Free Add-On Bundle",
-    note: "LOD Fresh, Sensitive, or Premium — your choice.",
+    note: "LOD Fresh, Sensitive, or Premium  your choice.",
     reached: false,
     isGoal: false,
     isLegend: false,
@@ -32,7 +32,7 @@ export const milestones = [
   {
     id: "10-bags",
     bags: 10,
-    label: "10 Bags — Streak Reward",
+    label: "10 Bags  Streak Reward",
     reward: "Free Essential Bag OR $14.99 Credit",
     note: null,
     reached: false,
@@ -52,7 +52,7 @@ export const milestones = [
   {
     id: "26-weeks",
     bags: null,
-    label: "26 Weeks — Streak Legend 🏆",
+    label: "26 Weeks  Streak Legend 🏆",
     reward: "Streak Legend Badge + Premium Gift",
     note: "Mailed to your door. A thank you from Hem.",
     reached: false,

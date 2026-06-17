@@ -63,7 +63,7 @@ export default function RefundPolicyContent() {
           headers={["Issue", "Credit Issued"]}
           rows={[
             ["Laundry returned visibly unwashed or still heavily soiled", "Full order credit"],
-            ["Significant folding quality failure — items crumpled, unfolded, or not folded", "50% order credit"],
+            ["Significant folding quality failure  items crumpled, unfolded, or not folded", "50% order credit"],
             ["Delivery delayed beyond 48 hours without prior notification", "25% order credit"],
             ["Missing item confirmed through LOD photo documentation review", "Up to $30 credit toward item replacement"],
           ]}

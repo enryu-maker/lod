@@ -94,21 +94,6 @@ export default function Footer() {
                   Referral Program
                 </Link>
               </li>
-              <li>
-                <Link href="/account/streak" className={navLinkClass}>
-                  My Streak
-                </Link>
-              </li>
-              <li>
-                <Link href="/account/referrals" className={navLinkClass}>
-                  My Referrals
-                </Link>
-              </li>
-              <li>
-                <Link href="/account/orders" className={navLinkClass}>
-                  My Orders
-                </Link>
-              </li>
             </ul>
           </StaggerItem>
 

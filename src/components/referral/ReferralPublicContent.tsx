@@ -94,7 +94,7 @@ export default function ReferralPublicContent() {
   const [copiedLink, setCopiedLink] = useState<boolean>(false);
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
 
-  const referralCode = profile?.referralCode || "KIRA4821";
+  const referralCode = profile?.referralCode || "YOURCODE";
   const publicReferralLink = `lodvalet.com/r/${referralCode}`;
 
   // Math variables
@@ -192,7 +192,7 @@ export default function ReferralPublicContent() {
             </h1>
 
             <p className="font-heading font-normal text-base md:text-xl text-white/65 leading-[1.65] max-w-[500px] mb-10">
-              Share LOD with a friend. They get their first bag completely free — no credit card needed. You earn $5 the moment their first order is delivered.
+              Share LOD with a friend. They get their first bag completely free  no credit card needed. You earn $5 the moment their first order is delivered.
             </p>
 
             {/* Two Side-by-Side Reward Cards */}
@@ -433,7 +433,7 @@ export default function ReferralPublicContent() {
               Think about what this actually means.
             </h2>
             <p className="font-heading font-normal text-base md:text-lg text-[#0A1628]/55 max-w-2xl mx-auto leading-relaxed">
-              If you have friends who need laundry done — and almost everyone does — this adds up fast.
+              If you have friends who need laundry done  and almost everyone does  this adds up fast.
             </p>
           </div>
 
@@ -550,7 +550,7 @@ export default function ReferralPublicContent() {
               {
                 icon: <GraduationCap className="h-8 w-8 text-[#00C2A8]" />,
                 title: "Students in your life",
-                body: "BU, Northeastern, Harvard, MIT — college students with no time and shared laundry machines.",
+                body: "BU, Northeastern, Harvard, MIT  college students with no time and shared laundry machines.",
               },
               {
                 icon: <Home className="h-8 w-8 text-[#00C2A8]" />,
@@ -610,7 +610,7 @@ export default function ReferralPublicContent() {
           {/* LOD Insider Value Box */}
           <Reveal className="max-w-xl mx-auto bg-[#D4A843]/10 border border-[#D4A843]/25 rounded-2xl p-6 md:p-10 mb-16 text-left">
             <span className="font-sans text-[11px] font-semibold tracking-[0.1em] text-[#D4A843] uppercase block mb-4">
-              LOD INSIDER — $24.99/YEAR VALUE
+              LOD INSIDER  $24.99/YEAR VALUE
             </span>
             <div className="flex flex-col gap-4">
               {[
@@ -771,7 +771,7 @@ export default function ReferralPublicContent() {
                   href="/signup?redirect=/account/referrals"
                   className="font-heading font-bold text-base bg-[#00C2A8] text-[#0A1628] px-12 py-4 rounded-lg hover:scale-[1.02] hover:brightness-95 active:scale-[0.98] transition-all text-center block w-full sm:w-auto"
                 >
-                  Create Your Account — It&apos;s Free →
+                  Create Your Account  It&apos;s Free →
                 </Link>
                 <Link
                   href="/login?redirect=/account/referrals"

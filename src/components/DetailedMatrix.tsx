@@ -50,16 +50,15 @@ const steps: StepItem[] = [
     id: "step-3",
     stepNum: "03",
     title: "Partner Facility Processes",
-    description:
-      "Your garments are taken to our strictly vetted partner facilities. Colors are meticulously sorted, pockets checked, and items washed using eco-friendly detergents. Finally, the LOD standard precise fold is applied.",
+    description:"Your garments go to our vetted partner facilities. Colors are sorted, pockets checked, and items washed with premium LOD-approved detergents. Then folded to LOD standard retail-store quality, every time.",
     icon: <Building2 className={smIcon} strokeWidth={2.5} aria-hidden="true" />,
   },
   {
     id: "step-4",
     stepNum: "04",
     title: "Quality Check",
-    description:
-      "Every order undergoes a rigorous retail-store standard checklist inspection. We check for lingering stains, perfect folds, and accurate item counts before securely assigning it for delivery.",
+        description:
+      "Before your order leaves the facility, it goes through a full quality checklist. Every fold checked. Every item counted. Nothing ships unless it meets the standard.",
     icon: <CircleCheck className={smIcon} strokeWidth={2.5} aria-hidden="true" />,
   },
   {
@@ -67,7 +66,7 @@ const steps: StepItem[] = [
     stepNum: "05",
     title: "Delivered Back",
     description:
-      "Your pristine laundry is returned during your chosen delivery window. You'll receive a confirmation text the moment it's securely placed at your door, ready to be put straight into your closet.",
+      "Your laundry is delivered back within your chosen window. You get a text the moment it is placed at your door. Put it straight in your closet. Done.",
     icon: <Home className={smIcon} strokeWidth={2.5} aria-hidden="true" />,
   },
   {

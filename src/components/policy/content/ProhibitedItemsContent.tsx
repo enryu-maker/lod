@@ -72,7 +72,7 @@ export default function ProhibitedItemsContent() {
         </div>
       </NoticeBlock>
 
-      <PolicySection id="complete-list" title="1. Prohibited Items — Complete List">
+      <PolicySection id="complete-list" title="1. Prohibited Items  Complete List">
         <CategoryCard
           number={1}
           title="Specialty Fabrics That Cannot Be Machine Washed"

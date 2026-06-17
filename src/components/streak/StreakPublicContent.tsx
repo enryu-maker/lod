@@ -216,7 +216,7 @@ export default function StreakPublicContent() {
             {/* Dynamic Welcome Heading */}
             {user && (
               <p className="font-sans text-sm font-semibold uppercase tracking-wider text-[#00C2A8] mb-2">
-                Welcome back, {profile?.firstName || "Member"}! You&apos;re at {currentStreak} of 10 bags — keep going!
+                Welcome back, {profile?.firstName || "Member"}! You&apos;re at {currentStreak} of 10 bags  keep going!
               </p>
             )}
 
@@ -236,10 +236,7 @@ export default function StreakPublicContent() {
               <div className="h-12 w-[1px] bg-white/10" />
               <div className="flex-grow">
                 <p className="font-heading font-bold text-lg md:text-[22px] text-white leading-snug">
-                  bags = 1 free wash
-                </p>
-                <p className="font-heading font-normal text-xs md:text-sm text-white/55">
-                  or $14.99 LOD credit — your choice
+                  bags = $14.99 LOD credit
                 </p>
               </div>
             </div>
@@ -469,8 +466,8 @@ export default function StreakPublicContent() {
               {
                 id: 3,
                 title: "10 Bags Completed",
-                body: "The milestone every LOD customer works toward. 10 delivered bags = your reward, your choice.",
-                reward: "Free Essential Wash ($41.99) OR $14.99 LOD Credit",
+                body: "The milestone every LOD customer works toward. 10 delivered bags = $14.99 LOD credit",
+                reward: "$14.99 LOD Credit",
                 color: "#00C2A8",
                 bgColor: "rgba(0,194,168,0.06)",
                 borderColor: "rgba(0,194,168,0.2)",
@@ -491,7 +488,7 @@ export default function StreakPublicContent() {
               },
               {
                 id: 5,
-                title: "26 Weeks Active — Streak Legend",
+                title: "26 Weeks Active  Streak Legend",
                 body: "Six months of LOD. You're not just a customer at this point. You're part of the story. Mailed to your door. A personal note from Hem.",
                 reward: "Streak Legend Badge + Premium Gift",
                 color: "#D4A843",
@@ -565,37 +562,7 @@ export default function StreakPublicContent() {
           </div>
 
           {/* Cards Layout */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-10">
-            {/* Card A */}
-            <div className="bg-white/6 border border-white/12 rounded-[20px] p-8 md:p-10 flex flex-col items-center text-center">
-              <div className="h-20 w-20 bg-[#00C2A8]/15 rounded-2xl flex items-center justify-center text-[#00C2A8] mb-6 shadow-inner select-none">
-                <svg viewBox="0 0 40 40" fill="none" className="h-10 w-10 text-[#00C2A8]" aria-hidden>
-                  <path
-                    d="M12 14V12C12 8.686 14.686 6 18 6H22C25.314 6 28 8.686 28 12V14"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                  />
-                  <rect x="8" y="14" width="24" height="20" rx="3" stroke="currentColor" strokeWidth="1.5" />
-                </svg>
-              </div>
-
-              <h3 className="font-heading font-bold text-2xl text-white mb-2">
-                1 Free Essential Bag
-              </h3>
-              <p className="font-sans font-semibold text-sm text-[#00C2A8] mb-4">
-                $41.99 value
-              </p>
-              <p className="font-sans font-normal text-[15px] text-white/60 leading-relaxed mb-6 flex-grow">
-                A complete wash, dry, and fold order. Free pickup. Free delivery. Next day return. No credit card needed to claim.
-              </p>
-              <div className="w-full border-t border-white/8 pt-4">
-                <span className="font-sans text-xs font-medium uppercase tracking-wider text-white/35">
-                  Most popular choice
-                </span>
-              </div>
-            </div>
-
+          <div className="grid grid-cols-1 gap-8 max-w-4xl mx-auto mb-10">
             {/* Card B */}
             <div className="bg-white/6 border border-white/12 rounded-[20px] p-8 md:p-10 flex flex-col items-center text-center">
               <div className="h-20 w-20 bg-[#00C2A8]/15 rounded-2xl flex items-center justify-center text-[#00C2A8] mb-6 shadow-inner select-none">
@@ -613,7 +580,7 @@ export default function StreakPublicContent() {
                 Applied to any order
               </p>
               <p className="font-sans font-normal text-[15px] text-white/60 leading-relaxed mb-6 flex-grow">
-                Use it on any future LOD order. Stack it with other credits. No expiry. Apply it to add-ons, upgrades, or your next bag — your call.
+                Use it on any future LOD order. Stack it with other credits. No expiry. Apply it to add-ons, upgrades, or your next bag your call.
               </p>
               <div className="w-full border-t border-white/8 pt-4">
                 <span className="font-sans text-xs font-medium uppercase tracking-wider text-white/35">
@@ -782,7 +749,7 @@ export default function StreakPublicContent() {
               {
                 feature: "Points required",
                 other: "✗ Complex point systems",
-                lod: "✓ Just bags — count to 10",
+                lod: "✓ Just bags  count to 10",
               },
               {
                 feature: "Reward expiry",
@@ -807,7 +774,7 @@ export default function StreakPublicContent() {
               {
                 feature: "Choice of reward",
                 other: "✗ Locked into one option",
-                lod: "✓ Free wash or cash credit — you choose",
+                lod: "✓ Free wash or cash credit  you choose",
               },
             ].map((row, index) => {
               const isEven = index % 2 === 0;

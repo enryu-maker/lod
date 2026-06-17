@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import ReferralPublicContent from "@/components/referral/ReferralPublicContent";
 
 export const metadata: Metadata = {
-  title: "LOD Referral Program — Give a Free Bag. Earn $5.",
+  title: "LOD Referral Program  Give a Free Bag. Earn $5.",
   description:
     "Share LOD with a friend in Boston. They get their first bag completely free. You earn $5 LOD credit when they complete their first order.",
   alternates: {

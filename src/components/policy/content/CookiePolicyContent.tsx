@@ -12,7 +12,7 @@ const cookieTypes = [
   {
     icon: "🔒",
     title: "Essential Cookies",
-    badge: "Required — Cannot be disabled",
+    badge: "Required  Cannot be disabled",
     badgeStyle: "bg-[#0A1628]/8 text-[#0A1628]",
     body: "Required for the website and app to function. These enable core features like account login, order placement, and security.",
     examples: "Session tokens, authentication, cart state",

@@ -44,7 +44,7 @@ export default function DmcaContent() {
         </PolicyP>
       </PolicySection>
 
-      <PolicySection id="dmca-notice" title="3. DMCA Notice — Reporting Copyright Infringement">
+      <PolicySection id="dmca-notice" title="3. DMCA Notice  Reporting Copyright Infringement">
         <PolicyP>
           If you believe content on the LOD platform infringes your copyright, please send a DMCA
           notice with the following information:

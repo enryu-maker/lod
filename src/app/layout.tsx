@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "LOD — Premium Laundry Pickup & Delivery in Boston | We Handle It",
+  title: "LOD  Premium Laundry Pickup & Delivery in Boston | We Handle It",
   description:
     "LOD picks up your laundry, washes it, folds it, and delivers it back to your door. Boston's premium laundry pickup and delivery service. Back Bay, Brookline, Fenway. Starting at $41.99.",
 };

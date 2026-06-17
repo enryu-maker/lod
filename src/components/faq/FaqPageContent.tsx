@@ -70,17 +70,22 @@ export default function FaqPageContent() {
         {
           question: "What happens if I'm not home?",
           answer:
-            "No problem! You can leave your bag with your building's concierge, on your porch, or specify a secure drop-off/pickup location in the app. Just update your delivery instructions before our driver arrives.",
+            "If you're not home, just leave your LOD bag at your door. Your driver will pick it up and we'll text you the moment it's collected. Most of our customers never have to be there it just handles itself.",
+        },
+        {
+          question: "Do you mix my clothes with others?",
+          answer:"Never. Every LOD order is processed separately at our partner facility. Your clothes are always in your own bag. Zero tolerance for mixing.",
+        },
+
+        {
+          question: "What detergents do you use?",
+          answer:
+            "Every order includes LOD Fresh standard detergent. You can upgrade to premium pods (Tide or Persil), hypoallergenic formula, or choose from our add-on bundles at checkout.",
         },
         {
           question: "Is there a delivery fee?",
           answer:
-            "Delivery is completely free for all standard bag tiers. There are no hidden service fees, delivery surcharges, or fuel fees. The price you see is the price you pay.",
-        },
-        {
-          question: "Where do you deliver?",
-          answer:
-            "LOD currently operates in Boston neighborhoods including Back Bay, Brookline, Fenway/Kenmore, Prudential, Mission Hill, and Longwood. We are expanding soon to Allston, Brighton, Cambridge, and Somerville.",
+            "No. Free pickup and free delivery is included in every single order. The price you see is the price you pay.",
         },
       ],
     },

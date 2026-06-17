@@ -257,7 +257,7 @@ export default function StreakProgramContent() {
             {cardLinked ? (
               <div className="mt-6 rounded-lg border border-emerald-500/20 bg-emerald-500/6 p-5">
                 <p className="font-heading text-[15px] font-semibold text-[#10B981]">
-                  Card linked ✓ — your physical stamps sync automatically.
+                  Card linked ✓  your physical stamps sync automatically.
                 </p>
               </div>
             ) : (

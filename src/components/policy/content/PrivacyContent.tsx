@@ -46,7 +46,7 @@ export default function PrivacyContent() {
             items={[
               <>Account information: your full name, email address, phone number, and delivery address when you create an account</>,
               <>Order information: pickup and delivery addresses, special instructions, add-on preferences, and order history</>,
-              <>Payment information: billing name and payment card details (processed and stored by Stripe — see Section 4)</>,
+              <>Payment information: billing name and payment card details (processed and stored by Stripe  see Section 4)</>,
               <>Communications: messages, emails, feedback, or support requests</>,
               <>Referral information: name and email if you refer another customer</>,
               <>Promotional entries: information submitted for promotions</>,
@@ -107,12 +107,12 @@ export default function PrivacyContent() {
           <PolicyTable
             headers={["Service Provider", "Purpose", "Data Shared"]}
             rows={[
-              ["Stripe", "Payment processing", "Payment card data (stored by Stripe — LOD does not store card numbers)"],
+              ["Stripe", "Payment processing", "Payment card data (stored by Stripe  LOD does not store card numbers)"],
               ["Firebase (Google Cloud)", "App infrastructure, auth, order data storage", "Account data, order data"],
               ["Twilio", "SMS notifications", "Phone number and message content"],
               ["Brevo", "Email communications", "Email address and name"],
               ["Anthropic (Claude API)", "AI-powered customer communications and operational automation", "Anonymized customer interaction data and order context"],
-              ["Microsoft Clarity", "Website session recording for UX improvement", "Anonymized behavioral data — does not capture payment fields"],
+              ["Microsoft Clarity", "Website session recording for UX improvement", "Anonymized behavioral data  does not capture payment fields"],
               ["FingerprintJS", "Fraud prevention", "Device technical characteristics for fraud-prevention identifier only"],
               ["Independent Processing Partners", "Laundry fulfillment", "Order ID, items, add-on instructions. No payment data."],
               ["Independent Drivers", "Pickup and delivery", "First name, address, phone number for coordination, Order ID"],

@@ -164,36 +164,6 @@ export default function AboutPageContent() {
       {/* Company details */}
       <Reveal as="section" className="py-16 md:py-20">
         <div className={sectionX}>
-          <h2 className="font-heading font-bold text-[32px] text-[#0A1628] mb-10">
-            Company details
-          </h2>
-          <dl className="max-w-2xl">
-            {companyDetails.map((row, i) => (
-              <div
-                key={row.label}
-                className={`flex flex-col sm:flex-row sm:justify-between gap-1 py-4 ${
-                  i > 0 ? "border-t border-[#F4F6F8]" : ""
-                }`}
-              >
-                <dt className="font-heading font-normal text-base text-[#6B7280]">
-                  {row.label}
-                </dt>
-                <dd className="font-heading font-normal text-base text-[#0A1628] sm:text-right">
-                  {"href" in row && row.href ? (
-                    <a
-                      href={row.href}
-                      className="text-[#00C2A8] hover:underline"
-                    >
-                      {row.value}
-                    </a>
-                  ) : (
-                    row.value
-                  )}
-                </dd>
-              </div>
-            ))}
-          </dl>
-
           <div className="mt-14">
             <h3 className="font-heading font-bold text-[22px] text-[#0A1628] mb-3">
               Press and media
@@ -206,6 +176,13 @@ export default function AboutPageContent() {
                 className="text-[#00C2A8] hover:underline"
               >
                 hem@lodvalet.com
+              </a>
+              {" | "}
+              <a
+                href="mailto:hello@lodvalet.com"
+                className="text-[#00C2A8] hover:underline"
+              >
+                hello@lodvalet.com
               </a>
             </p>
           </div>

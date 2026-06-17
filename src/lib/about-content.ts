@@ -7,7 +7,7 @@ export const aboutValues = [
   {
     number: "02",
     title: "Premium Without Pretension",
-    body: "LOD is premium but never cold. Luxurious but accessible. Premium means consistent, reliable, beautifully executed — not expensive for the sake of it.",
+    body: "LOD is premium but never cold. Luxurious but accessible. Premium means consistent, reliable, beautifully executed  not expensive for the sake of it.",
   },
   {
     number: "03",

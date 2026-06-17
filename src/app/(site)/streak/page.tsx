@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import StreakPublicContent from "@/components/streak/StreakPublicContent";
 
 export const metadata: Metadata = {
-  title: "LOD Streak Program — Earn Free Laundry in Boston",
+  title: "LOD Streak Program  Earn Free Laundry in Boston",
   description:
     "Every LOD order earns you a streak stamp. 10 bags earns you a free Essential wash or $14.99 credit. Boston's laundry loyalty program that actually rewards you.",
   alternates: {

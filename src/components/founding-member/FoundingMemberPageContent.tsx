@@ -228,7 +228,7 @@ export default function FoundingMemberPageContent() {
               >
                 <span className="text-sm">⚠</span>
                 <span className="font-sans text-sm font-bold text-[#EF4444]">
-                  Almost gone — only {remaining} spots left
+                  Almost gone  only {remaining} spots left
                 </span>
               </motion.div>
             )}
