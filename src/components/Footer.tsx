@@ -85,13 +85,23 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/account/streak" className={navLinkClass}>
+                <Link href="/streak" className={navLinkClass}>
                   Streak Program
                 </Link>
               </li>
               <li>
-                <Link href="/account/referrals" className={navLinkClass}>
+                <Link href="/referral" className={navLinkClass}>
                   Referral Program
+                </Link>
+              </li>
+              <li>
+                <Link href="/account/streak" className={navLinkClass}>
+                  My Streak
+                </Link>
+              </li>
+              <li>
+                <Link href="/account/referrals" className={navLinkClass}>
+                  My Referrals
                 </Link>
               </li>
             </ul>

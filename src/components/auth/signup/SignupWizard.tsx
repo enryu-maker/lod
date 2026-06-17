@@ -24,6 +24,7 @@ function SignupWizardInner() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const refCode = searchParams.get("ref");
+  const redirectTo = searchParams.get("redirect") ?? "/order";
 
   const [step, setStep] = useState<1 | 2 | 3>(1);
   const [account, setAccount] = useState<SignupAccountData>(emptyAccount);
@@ -33,7 +34,7 @@ function SignupWizardInner() {
     FOUNDING_MEMBER_ENABLED && FOUNDING_MEMBER_REMAINING > 0;
 
   const goToOrder = () => {
-    router.push("/order");
+    router.push(redirectTo);
   };
 
   const handleStep1Complete = (data: SignupAccountData) => {

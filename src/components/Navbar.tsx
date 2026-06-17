@@ -64,6 +64,12 @@ export default function Navbar({ embedded = false }: NavbarProps) {
             How It Works
           </Link>
           <Link
+            href="/streak"
+            className="font-sans text-sm font-medium text-on-surface-variant hover:text-primary transition-colors duration-200"
+          >
+            Loyalty
+          </Link>
+          <Link
             href="/#pricing"
             className="font-sans text-sm font-medium text-on-surface-variant hover:text-primary transition-colors duration-200"
           >
@@ -134,6 +140,13 @@ export default function Navbar({ embedded = false }: NavbarProps) {
             className="font-sans text-base font-medium text-on-surface-variant hover:text-primary transition-colors w-full text-center py-2"
           >
             How It Works
+          </Link>
+          <Link
+            href="/streak"
+            onClick={() => setIsOpen(false)}
+            className="font-sans text-base font-medium text-on-surface-variant hover:text-primary transition-colors w-full text-center py-2"
+          >
+            Loyalty
           </Link>
           <Link
             href="/#pricing"
