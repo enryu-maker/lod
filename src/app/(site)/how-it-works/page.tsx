@@ -1,7 +1,6 @@
 import React from "react";
 import Navbar from "@/components/Navbar";
 import OrderHero from "@/components/OrderHero";
-import HowItWorks from "@/components/HowItWorks";
 import DetailedMatrix from "@/components/DetailedMatrix";
 import Pricing from "@/components/Pricing";
 import PhotoPromise from "@/components/PhotoPromise";
@@ -19,7 +18,6 @@ export default function HowItWorksPage() {
       <Navbar />
       <main className="flex-grow">
         <OrderHero />
-        <HowItWorks />
         <DetailedMatrix />
         <Pricing />
         <PhotoPromise />

@@ -4,7 +4,7 @@ import AccessibilityContent from "@/components/policy/content/AccessibilityConte
 
 export const metadata: Metadata = {
   title: "Accessibility Statement | LOD",
-  description: "LOD accessibility commitment and feedback contact.",
+  description: "LOD's commitment to WCAG 2.1 Level AA accessibility. Contact us with feedback at support@lodvalet.com.",
 };
 
 export default function AccessibilityPage() {

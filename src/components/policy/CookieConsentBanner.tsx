@@ -42,7 +42,12 @@ export default function CookieConsentBanner() {
 
   useEffect(() => {
     const existing = readConsent();
-    if (!existing) setVisible(true);
+    if (!existing) {
+      const timer = setTimeout(() => {
+        setVisible(true);
+      }, 0);
+      return () => clearTimeout(timer);
+    }
   }, []);
 
   const dismiss = (consent: ConsentState) => {

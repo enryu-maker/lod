@@ -173,7 +173,10 @@ export default function StreakProgramContent() {
   const [savingReward, setSavingReward] = useState(false);
 
   useEffect(() => {
-    setSelectedReward(rewardChoice);
+    const timer = setTimeout(() => {
+      setSelectedReward(rewardChoice);
+    }, 0);
+    return () => clearTimeout(timer);
   }, [rewardChoice]);
 
   const bagsToGo = Math.max(goal - currentStreak, 0);

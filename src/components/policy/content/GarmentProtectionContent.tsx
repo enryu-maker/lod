@@ -170,7 +170,7 @@ export default function GarmentProtectionContent() {
 
       <PolicySection id="how-to-add" title="7. How to Add Garment Protection">
         <div className="rounded-xl bg-[#0A1628] p-7">
-          <PolicyP>
+          <PolicyP variant="dark">
             Select Garment Protection at checkout in the LOD app or website. It must be added before
             your order is picked up. It cannot be added retroactively.
           </PolicyP>

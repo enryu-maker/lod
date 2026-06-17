@@ -25,20 +25,28 @@ export function useStreakPageData() {
   const [dataLoading, setDataLoading] = useState(isFirebaseConfigured());
 
   useEffect(() => {
-    setProfile(initialProfile);
+    const timer = setTimeout(() => {
+      setProfile(initialProfile);
+    }, 0);
+    return () => clearTimeout(timer);
   }, [initialProfile]);
 
   useEffect(() => {
     if (!user || !isFirebaseConfigured()) {
-      setDataLoading(false);
-      return;
+      const timer = setTimeout(() => {
+        setDataLoading(false);
+      }, 0);
+      return () => clearTimeout(timer);
     }
 
     const unsubProfile = subscribeUserProfile(user.uid, setProfile);
     const unsubStamps = subscribeStamps(user.uid, setStamps);
-    setDataLoading(false);
+    const timer = setTimeout(() => {
+      setDataLoading(false);
+    }, 0);
 
     return () => {
+      clearTimeout(timer);
       unsubProfile();
       unsubStamps();
     };

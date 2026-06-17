@@ -25,7 +25,7 @@ export default function SignupStep2Phone({ onVerified }: SignupStep2PhoneProps) 
   const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
 
   const formattedPhone = formatPhoneDisplay(phoneDigits);
-  const isLockedOut = lockoutUntil !== null && Date.now() < lockoutUntil;
+  const isLockedOut = lockoutUntil !== null;
   const otpComplete = otp.every((d) => d.length === 1);
 
   useEffect(() => {

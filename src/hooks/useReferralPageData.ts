@@ -26,22 +26,30 @@ export function useReferralPageData() {
   const [dataLoading, setDataLoading] = useState(isFirebaseConfigured());
 
   useEffect(() => {
-    setProfile(initialProfile);
+    const timer = setTimeout(() => {
+      setProfile(initialProfile);
+    }, 0);
+    return () => clearTimeout(timer);
   }, [initialProfile]);
 
   useEffect(() => {
     if (!user || !isFirebaseConfigured()) {
-      setDataLoading(false);
-      return;
+      const timer = setTimeout(() => {
+        setDataLoading(false);
+      }, 0);
+      return () => clearTimeout(timer);
     }
 
     const unsubProfile = subscribeUserProfile(user.uid, setProfile);
     const unsubReferrals = subscribeReferrals(user.uid, setReferrals);
     const unsubLeaderboard = subscribeLeaderboard(setLeaderboard);
 
-    setDataLoading(false);
+    const timer = setTimeout(() => {
+      setDataLoading(false);
+    }, 0);
 
     return () => {
+      clearTimeout(timer);
       unsubProfile();
       unsubReferrals();
       unsubLeaderboard();

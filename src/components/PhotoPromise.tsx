@@ -14,7 +14,7 @@ export default function PhotoPromise() {
     {
       title: "Pickup Verified",
       imageSrc: "/Order-step/Image (1).png",
-      alt: "Valet verifying pickup at door",
+      alt: "Driver verifying pickup at door",
     },
     {
       title: "Intake Sorted",

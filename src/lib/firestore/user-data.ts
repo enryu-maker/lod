@@ -253,3 +253,30 @@ export function toReferralRow(referral: ReferralRecord) {
     credit: referral.credit,
   };
 }
+
+export function subscribeFoundingCount(
+  onData: (remaining: number) => void,
+  fallback = 247
+): Unsubscribe {
+  const db = getFirestoreDb();
+  if (!db) {
+    onData(fallback);
+    return () => {};
+  }
+  return onSnapshot(
+    doc(db, "config", "founding"),
+    (snap) => {
+      if (snap.exists()) {
+        const data = snap.data();
+        if (typeof data.remaining === "number") {
+          onData(data.remaining);
+          return;
+        }
+      }
+      onData(fallback);
+    },
+    () => {
+      onData(fallback);
+    }
+  );
+}

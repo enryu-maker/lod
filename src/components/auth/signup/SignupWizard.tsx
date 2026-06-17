@@ -1,12 +1,13 @@
 "use client";
 
 import { useRouter, useSearchParams } from "next/navigation";
-import { Suspense, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import SignupShell from "./SignupShell";
 import SignupStep1Account from "./SignupStep1Account";
 import SignupStep2Phone from "./SignupStep2Phone";
 import SignupStep3FoundingMember from "./SignupStep3FoundingMember";
 import StepTransition from "@/components/motion/StepTransition";
+import { subscribeFoundingCount } from "@/lib/firestore/user-data";
 import {
   FOUNDING_MEMBER_ENABLED,
   FOUNDING_MEMBER_REMAINING,
@@ -29,9 +30,14 @@ function SignupWizardInner() {
   const [step, setStep] = useState<1 | 2 | 3>(1);
   const [account, setAccount] = useState<SignupAccountData>(emptyAccount);
   const [isProcessingPayment, setIsProcessingPayment] = useState(false);
+  const [remaining, setRemaining] = useState(FOUNDING_MEMBER_REMAINING);
+
+  useEffect(() => {
+    return subscribeFoundingCount(setRemaining);
+  }, []);
 
   const showFoundingStep =
-    FOUNDING_MEMBER_ENABLED && FOUNDING_MEMBER_REMAINING > 0;
+    FOUNDING_MEMBER_ENABLED && remaining > 0;
 
   const goToOrder = () => {
     router.push(redirectTo);
@@ -71,7 +77,7 @@ function SignupWizardInner() {
         {step === 2 && <SignupStep2Phone onVerified={handleStep2Complete} />}
         {step === 3 && showFoundingStep && (
           <SignupStep3FoundingMember
-            remaining={FOUNDING_MEMBER_REMAINING}
+            remaining={remaining}
             onAccept={handleAcceptFounding}
             onSkip={goToOrder}
             isProcessing={isProcessingPayment}

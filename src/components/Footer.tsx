@@ -104,6 +104,11 @@ export default function Footer() {
                   My Referrals
                 </Link>
               </li>
+              <li>
+                <Link href="/account/orders" className={navLinkClass}>
+                  My Orders
+                </Link>
+              </li>
             </ul>
           </StaggerItem>
 
@@ -159,7 +164,9 @@ export default function Footer() {
           <p className="font-sans font-normal text-xs text-white/30">
             © 2026 LOD LLC. Boston, MA. All rights reserved.
           </p>
-          
+          <p className="font-sans font-normal text-xs text-white/30">
+            LOD™, HANDLED.™ and the LOD Portal O logo™ are trademarks of LOD LLC.
+          </p>
         </div>
       </div>
     </Reveal>

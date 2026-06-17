@@ -70,19 +70,19 @@ export default function Navbar({ embedded = false }: NavbarProps) {
             Loyalty
           </Link>
           <Link
-            href="/#pricing"
+            href="/pricing"
             className="font-sans text-sm font-medium text-on-surface-variant hover:text-primary transition-colors duration-200"
           >
             Pricing
           </Link>
           <Link
-            href="/#areas"
+            href="/areas"
             className="font-sans text-sm font-medium text-on-surface-variant hover:text-primary transition-colors duration-200"
           >
             Areas
           </Link>
           <Link
-            href="/#faq"
+            href="/faq"
             className="font-sans text-sm font-medium text-on-surface-variant hover:text-primary transition-colors duration-200"
           >
             FAQ
@@ -104,7 +104,7 @@ export default function Navbar({ embedded = false }: NavbarProps) {
             Log In
           </Link>
           <Link
-            href="/#schedule"
+            href="/order"
             className="font-sans text-xs font-medium uppercase tracking-wider bg-primary text-on-primary hover:bg-primary-container px-6 py-3 rounded-lg transition-all duration-200 hover:scale-[1.03]"
           >
             Schedule Pickup
@@ -149,21 +149,21 @@ export default function Navbar({ embedded = false }: NavbarProps) {
             Loyalty
           </Link>
           <Link
-            href="/#pricing"
+            href="/pricing"
             onClick={() => setIsOpen(false)}
             className="font-sans text-base font-medium text-on-surface-variant hover:text-primary transition-colors w-full text-center py-2"
           >
             Pricing
           </Link>
           <Link
-            href="/#areas"
+            href="/areas"
             onClick={() => setIsOpen(false)}
             className="font-sans text-base font-medium text-on-surface-variant hover:text-primary transition-colors w-full text-center py-2"
           >
             Areas
           </Link>
           <Link
-            href="/#faq"
+            href="/faq"
             onClick={() => setIsOpen(false)}
             className="font-sans text-base font-medium text-on-surface-variant hover:text-primary transition-colors w-full text-center py-2"
           >
@@ -186,7 +186,7 @@ export default function Navbar({ embedded = false }: NavbarProps) {
               Log In
             </Link>
             <Link
-              href="/#schedule"
+              href="/order"
               onClick={() => setIsOpen(false)}
               className="font-sans text-xs font-medium uppercase tracking-wider bg-primary text-on-primary hover:bg-primary-container px-8 py-3.5 rounded-lg transition-all w-full text-center"
             >

@@ -222,8 +222,8 @@ export default function TermsContent() {
             Founding Member status is a one-time, non-refundable purchase of $14.99 that provides
             a 10% discount on eligible single bag orders for the life of your account in good
             standing. Benefits do not apply to subscriptions, the LOD Starter Kit, or orders
-            already discounted at a higher rate. Limited to the first 500 members. See{" "}
-            <PolicyLink href="/founding-member">/founding-member</PolicyLink> for full details.
+            already discounted at a higher rate. Limited to the first 500 members. See the{" "}
+            <PolicyLink href="/founding-member">Founding Member page</PolicyLink> for full details.
           </PolicyP>
         </CalloutBox>
       </PolicySection>

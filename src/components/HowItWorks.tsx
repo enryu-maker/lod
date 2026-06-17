@@ -29,7 +29,7 @@ export default function HowItWorks() {
             </h3>
             <p className="font-heading font-normal text-sm md:text-base text-surface-bright/70 leading-relaxed">
               Select a pickup time in the app. Leave your bag at the door or
-              hand it directly to our concierge.
+              hand it directly to our driver.
             </p>
           </StaggerItem>
 

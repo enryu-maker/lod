@@ -4,7 +4,7 @@ import GarmentProtectionContent from "@/components/policy/content/GarmentProtect
 
 export const metadata: Metadata = {
   title: "Garment Protection Terms | LOD",
-  description: "LOD Garment Protection terms, coverage, and claim procedures.",
+  description: "LOD Garment Protection covers up to $150 in account credit for verified garment damage or loss during LOD processing. $6.99 per order. Full terms and claim procedures.",
 };
 
 export default function GarmentProtectionPage() {

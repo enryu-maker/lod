@@ -7,7 +7,7 @@ export const aboutValues = [
   {
     number: "02",
     title: "Premium Without Pretension",
-    body: "Hotel-grade care without the attitude. White-glove service that feels effortless, never exclusive.",
+    body: "LOD is premium but never cold. Luxurious but accessible. Premium means consistent, reliable, beautifully executed — not expensive for the sake of it.",
   },
   {
     number: "03",
@@ -27,7 +27,7 @@ export const aboutValues = [
   {
     number: "06",
     title: "Partners Are Family",
-    body: "Our valets, customers, and community are in this together. We treat every relationship like it matters, because it does.",
+    body: "Our partners and drivers, customers, and community are in this together. We treat every relationship like it matters, because it does.",
   },
 ] as const;
 

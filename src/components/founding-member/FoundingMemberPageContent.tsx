@@ -1,12 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import Reveal from "@/components/motion/Reveal";
 import { Stagger, StaggerItem } from "@/components/motion/Stagger";
 import { pressableProps } from "@/lib/motion";
-import { FOUNDING_MEMBER_REMAINING } from "@/components/auth/signup/signup-utils";
+import { subscribeFoundingCount } from "@/lib/firestore/user-data";
 import {
   clarityCards,
   foundingBenefits,
@@ -19,12 +19,61 @@ const wideX = "max-w-[1280px] mx-auto px-4 md:px-20";
 function PortalAnimationSlot() {
   return (
     <div
-      className="mx-auto mb-6 flex h-16 w-16 items-center justify-center"
+      className="mx-auto mb-6 flex h-20 w-20 items-center justify-center relative"
       data-tag="portal-o-animation"
     >
-      <span className="font-sans text-xs uppercase tracking-[0.15em] text-white/25">
-        animation
-      </span>
+      {/* Background glow */}
+      <div className="absolute inset-0 bg-[#D4A843]/15 rounded-full blur-xl animate-pulse" />
+      
+      {/* Animated SVG Portal O */}
+      <svg
+        className="w-16 h-16 relative z-10 animate-[spin_12s_linear_infinite]"
+        viewBox="0 0 100 100"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        {/* Outer glowing track */}
+        <circle
+          cx="50"
+          cy="50"
+          r="42"
+          stroke="url(#portalGlow)"
+          strokeWidth="4"
+          strokeLinecap="round"
+          strokeDasharray="200 60"
+        />
+        {/* Inner track */}
+        <circle
+          cx="50"
+          cy="50"
+          r="34"
+          stroke="#D4A843"
+          strokeWidth="1.5"
+          strokeOpacity="0.4"
+          strokeLinecap="round"
+          strokeDasharray="40 10 100 20"
+          className="animate-[spin_8s_linear_infinite_reverse]"
+          style={{ transformOrigin: 'center' }}
+        />
+        {/* Center Portal O letter */}
+        <circle
+          cx="50"
+          cy="50"
+          r="20"
+          stroke="#D4A843"
+          strokeWidth="6"
+          strokeLinecap="round"
+          className="animate-pulse"
+        />
+        {/* Defining gradients */}
+        <defs>
+          <linearGradient id="portalGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#D4A843" />
+            <stop offset="50%" stopColor="#00C2A8" />
+            <stop offset="100%" stopColor="#D4A843" />
+          </linearGradient>
+        </defs>
+      </svg>
     </div>
   );
 }
@@ -137,10 +186,15 @@ function FoundingCTA({
 
 export default function FoundingMemberPageContent() {
   const reduceMotion = useReducedMotion();
-  const remaining = FOUNDING_MEMBER_REMAINING;
-  const showUrgency = remaining < 50;
+  const [remaining, setRemaining] = useState(247);
   const [processing, setProcessing] = useState(false);
   const isMember = false;
+
+  useEffect(() => {
+    return subscribeFoundingCount(setRemaining);
+  }, []);
+
+  const showUrgency = remaining < 50;
 
   const handleJoin = () => {
     setProcessing(true);

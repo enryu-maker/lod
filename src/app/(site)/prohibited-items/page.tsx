@@ -4,7 +4,7 @@ import ProhibitedItemsContent from "@/components/policy/content/ProhibitedItemsC
 
 export const metadata: Metadata = {
   title: "Prohibited Items Policy | LOD",
-  description: "Items that cannot be included in LOD laundry orders.",
+  description: "Items that cannot be included in LOD laundry orders. Specialty fabrics, hazardous materials, high-value garments, and more. Read before your first pickup.",
 };
 
 export default function ProhibitedItemsPage() {

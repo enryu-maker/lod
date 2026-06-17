@@ -19,7 +19,7 @@ export default function OrderPage() {
             Your account is ready. Book your first LOD pickup in under 60 seconds.
           </p>
           <Link
-            href="/#schedule"
+            href="/account"
             className="inline-flex font-sans text-sm font-medium uppercase tracking-wider bg-[#00C2A8] text-[#00382f] hover:bg-[#00C2A8]/90 px-8 py-4 rounded-lg transition-all duration-200"
           >
             Continue

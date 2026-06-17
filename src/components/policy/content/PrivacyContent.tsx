@@ -134,7 +134,7 @@ export default function PrivacyContent() {
         <PolicySubSection title="3.4 Social Media">
           <CalloutBox variant="teal">
             <PolicyP>
-              If you tag @lodvalet or use #HandledByHem, content you post publicly may be visible
+              If you tag @lodvalet or use #LODHandled, content you post publicly may be visible
               to LOD and may be reshared with your permission.
             </PolicyP>
           </CalloutBox>

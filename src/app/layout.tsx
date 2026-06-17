@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "LOD | Boston Pickup & Delivery",
-  description: "Efficient, meticulous, and sophisticated laundry service for urban professionals.",
+  title: "LOD — Premium Laundry Pickup & Delivery Boston | We Handle It",
+  description:
+    "LOD picks up your laundry, washes it, folds it, and delivers it back within 24 hours. Boston's premium laundry pickup and delivery service. Back Bay, Brookline, Fenway. Starting at $41.99.",
 };
 
 export default function RootLayout({

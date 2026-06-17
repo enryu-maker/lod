@@ -43,7 +43,7 @@ const steps: StepItem[] = [
     stepNum: "02",
     title: "Driver Picks Up",
     description:
-      "Receive a text 30 minutes before arrival. Your valet weighs your bag at the door, photographs the seal, and secures it in their vehicle for transport to our partner facility.",
+      "Receive a text 30 minutes before arrival. Your driver weighs your bag at the door, photographs the seal, and secures it in their vehicle for transport to our partner facility.",
     icon: <Truck className={smIcon} strokeWidth={2.5} aria-hidden="true" />,
   },
   {
