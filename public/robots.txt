@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /account/
+Disallow: /order/
+Disallow: /admin/
+Disallow: /partner/
+Disallow: /driver/
+
+Sitemap: https://lodvalet.com/sitemap.xml

@@ -4,7 +4,7 @@ import PrivacyContent from "@/components/policy/content/PrivacyContent";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | LOD",
-  description: "LOD Privacy Policy. Learn how we collect, use, and protect your information.",
+  description: "LOD Privacy Policy. Learn how we collect, use, store, and protect your personal information, contact info, and transaction history. Read our third-party data rules.",
 };
 
 export default function PrivacyPage() {
